@@ -1,5 +1,5 @@
 const GPT_API_URL = 'https://api.openai.com/v1/chat/completions';
-const GPT_API_KEY = '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';
+const GPT_API_KEY = 'YOUR_API_KEY';
 
 function extractAndGenerateDocuments(folderId) {
   const content = extractContentFromFiles(folderId);
