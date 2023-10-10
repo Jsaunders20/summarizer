@@ -7,50 +7,10 @@ function extractAndGenerateDocuments(folderId) {
   const summaryText = generateSummaryWithGPT4(content);
   const emailText = generateEmailWithGPT4(content);
 
-  // const summaryText = "summary"
-  // const emailText = "email"
-
-  // Logger.log(summaryText)
-  // Logger.log(emailText)
-  // Logger.log(typeof(summaryText))
-  // Logger.log(typeof(emailText))
 
   createDocumentInFolder(folderId, "Summary", summaryText);
   createDocumentInFolder(folderId, "Email", emailText);
 }
-
-// function extractContentFromPDFs(folderId) {
-//   const driveService = DriveApp;
-
-//   const folder = driveService.getFolderById(folderId);
-//   const files = folder.getFiles();
-//   let allText = "";
-
-//   while (files.hasNext()) {
-//     const file = files.next();
-
-//     if (file.getMimeType() === 'application/pdf') {
-//       const blob = file.getBlob();
-//       const resource = {
-//         title: file.getName(),
-//         mimeType: 'application/pdf',
-//       };
-//       const options = {
-//         ocr: true,
-//         ocrLanguage: 'en',
-//       };
-//       const pdfFile = Drive.Files.insert(resource, blob, options);
-//       const pdfDocId = pdfFile.id;
-//       const googleDoc = DocumentApp.openById(pdfDocId);
-//       const text = googleDoc.getBody().getText();
-//       allText += "\n\n" + text;
-
-//       driveService.getFileById(pdfDocId).setTrashed(true);
-//     }
-//   }
-
-//   return allText.slice(0, 12000);
-// }
 
 function extractContentFromFiles(folderId) { // Renamed from extractContentFromPDFs
   const driveService = DriveApp;
