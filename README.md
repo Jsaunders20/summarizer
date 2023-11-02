@@ -43,4 +43,4 @@ This script efficiently processes and summarizes the content of various file typ
 
 ## 👤 Author
 
-[Your Name or GitHub Username]
+Jackson Saunders
